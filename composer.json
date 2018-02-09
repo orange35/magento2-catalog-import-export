@@ -1,0 +1,17 @@
+{
+  "name": "orange35/catalog-import-export",
+  "description": "Extends magento/module-catalog-import-export module to allow overriding import/export functionality",
+  "version" : "1.0.0",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.6|~7.1.0"
+  },
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Orange35\\CatalogImportExport\\": ""
+    }
+  }
+}
