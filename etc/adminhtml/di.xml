@@ -3,4 +3,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\CatalogImportExport\Model\Export\Product" type="Orange35\CatalogImportExport\Model\Export\Product" />
     <preference for="Magento\CatalogImportExport\Model\Import\Product\Option" type="Orange35\CatalogImportExport\Model\Import\Product\Option" />
+    <preference for="Orange35\CatalogImportExport\Model\Export\ProductInterface" type="Orange35\CatalogImportExport\Model\Import\Product\Option" />
+    <preference for="Orange35\CatalogImportExport\Model\Import\Product\Option\FileInterface" type="Orange35\CatalogImportExport\Model\Import\Product\Option\File" />
 </config>
