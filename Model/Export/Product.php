@@ -90,6 +90,7 @@ class Product extends MagentoProduct implements ProductInterface
      * @param Value $value
      * @return array like ['my_field' => 'my_value']
      */
+    // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
     public function getCustomOptionValueAdditionalFields(Value $value)
     {
         return [];
