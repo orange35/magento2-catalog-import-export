@@ -128,4 +128,20 @@ class Option extends MagentoOption
     {
         return parent::_getSpecificTypeData($rowData, $optionTypeId, $defaultStore);
     }
+
+    /**
+     * Workaround to make method public
+     */
+    protected function _getOptionData(array $rowData, $productId, $optionId, $type)
+    {
+        return $this->getOptionData($rowData, $productId, $optionId, $type);
+    }
+
+    /**
+     * Allow to override by plugin
+     */
+    public function getOptionData(array $rowData, $productId, $optionId, $type)
+    {
+        return parent::_getOptionData($rowData, $productId, $optionId, $type);
+    }
 }

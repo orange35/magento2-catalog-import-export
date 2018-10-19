@@ -1,10 +1,14 @@
 # Description
 
-Module extends the **magento/module-catalog-import-export** to allow overriding custom option value import/export functionality:
-- adds to csv export additional non standard magento fields (if there are any) from `catalog_product_option_type_value` table 
-- the following methods are public which means available for plugins - `Magento\CatalogImportExport\Model\Import\Product\Option`:
-  - `processOptionRow(...)`
-  - `getSpecificTypeData(...)` 
+Module extends the **magento/module-catalog-import-export** to allow overriding custom option value import/export functionality. The following methods are public which means available for plugins:
+
+Orange35\CatalogImportExport\Model\Import\Product\Option:
+- `processOptionRow(...)`
+- `getSpecificTypeData(...)` 
+
+Orange35\CatalogImportExport\Model\Export\Product:
+- `getCustomOptionAdditionalFields(\Magento\Catalog\Model\Product\Option $option)`
+- `getCustomOptionValueAdditionalFields(\Magento\Catalog\Model\Product\Option\Value $value)` 
 
 # Install
 

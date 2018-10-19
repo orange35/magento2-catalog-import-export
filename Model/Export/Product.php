@@ -1,7 +1,9 @@
 <?php
+/** @noinspection PhpUnusedParameterInspection */
 
 namespace Orange35\CatalogImportExport\Model\Export;
 
+use Magento\Catalog\Model\Product\Option;
 use Magento\Catalog\Model\Product\Option\Value;
 use Magento\CatalogImportExport\Model\Export\Product as MagentoProduct;
 use Magento\Store\Model\Store;
@@ -13,6 +15,7 @@ class Product extends MagentoProduct implements ProductInterface
      * @param int[] $productIds
      * @return array
      */
+    // phpcs:ignore MEQP2.PHP.ProtectedClassMember.FoundProtected
     protected function getCustomOptionsData($productIds)
     {
         $customOptionsData = [];
@@ -55,6 +58,7 @@ class Product extends MagentoProduct implements ProductInterface
                         $row[$fileOptionKey] = $option[$fileOptionKey];
                     }
                 }
+                $row = array_merge($row, $this->getCustomOptionAdditionalFields($option));
                 $values = $option->getValues();
 
                 if ($values) {
@@ -66,7 +70,7 @@ class Product extends MagentoProduct implements ProductInterface
                             $row['price_type'] = ($value['price_type'] === 'percent') ? 'percent' : 'fixed';
                             $row['sku'] = $value['sku'];
                         }
-                        $this->injectCustomOptionValueAdditionalFields($row, $value);
+                        $row = array_merge($row, $this->getCustomOptionValueAdditionalFields($value));
                         $customOptionsData[$productId][$storeId][] = $this->optionRowToCellString($row);
                     }
                 } else {
@@ -80,9 +84,15 @@ class Product extends MagentoProduct implements ProductInterface
         return $customOptionsData;
     }
 
-    private function injectCustomOptionValueAdditionalFields(array &$row, Value $value)
+    /**
+     * This method can be overridden by plugin
+     * @param Option $option
+     * @return array like ['my_field' => 'my_value']
+     */
+    // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
+    public function getCustomOptionAdditionalFields(Option $option)
     {
-        $row = array_merge($row, $this->getCustomOptionValueAdditionalFields($value));
+        return [];
     }
 
     /**
