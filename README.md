@@ -1,12 +1,13 @@
 # Description
 
-Module extends the **magento/module-catalog-import-export** to allow overriding custom option value import/export functionality. The following methods are public which means available for plugins:
+Module extends the **magento/module-catalog-import-export** to allow overriding custom options import/export functionality. The following methods are public and available for plugins:
 
-Orange35\CatalogImportExport\Model\Import\Product\Option:
+**Orange35\CatalogImportExport\Model\Import\Product\Option:**
 - `processOptionRow(...)`
 - `getSpecificTypeData(...)` 
+- `getOptionData(...)` 
 
-Orange35\CatalogImportExport\Model\Export\Product:
+**Orange35\CatalogImportExport\Model\Export\Product:**
 - `getCustomOptionAdditionalFields(\Magento\Catalog\Model\Product\Option $option)`
 - `getCustomOptionValueAdditionalFields(\Magento\Catalog\Model\Product\Option\Value $value)` 
 
