@@ -19,7 +19,7 @@ The following methods are public and available for plugins:
 
 ## Install via composer (recommended)
     cd ~/public_html/
-    composer require orange35/module-catalog-import-export
+    composer require orange35/magento2-catalog-import-export
     php bin/magento setup:upgrade
 
 **Note:** the `~/public_html/` is a project root directory which may be different in your environment
@@ -27,10 +27,11 @@ The following methods are public and available for plugins:
 ## Manual installation using zip
 
     cd ~/public_html/
-    wget https://github.com/orange35/module-catalog-import-export/archive/1.0.0.zip
+    wget https://github.com/orange35/magento2-catalog-import-export/archive/1.0.0.zip
     mkdir -p app/code/Orange35/CatalogImportExport
     upzip 1.0.0.zip -d app/code/Orange35/CatalogImportExport
     rm -f 1.0.0.zip
+    php bin/magento module:enable Orange35_CatalogImportExport
     php bin/magento setup:upgrade
 
 ## Manual installation using git
@@ -38,6 +39,7 @@ The following methods are public and available for plugins:
     cd ~/public_html/
     mkdir -p app/code/Orange35
     cd app/code/Orange35/
-    git clone https://github.com/orange35/module-catalog-import-export CatalogImportExport
+    git clone https://github.com/orange35/magento2-catalog-import-export CatalogImportExport
     cd -
+    php bin/magento module:enable Orange35_CatalogImportExport
     php bin/magento setup:upgrade
