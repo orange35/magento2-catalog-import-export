@@ -1,5 +1,5 @@
 {
-  "name": "orange35/catalog-import-export",
+  "name": "orange35/magento2-catalog-import-export",
   "description": "Extends magento/module-catalog-import-export module to allow overriding custom options import/export functionality",
   "version" : "1.0.0",
   "require": {
